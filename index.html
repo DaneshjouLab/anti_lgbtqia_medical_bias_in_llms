@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<!-- Authors: Roxana Daneshjou, Kailas Vodrahalli -->
+<!-- Authors: Crystal T Chang -->
 <html lang="en">
 <head>
   <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.7.16">
   <meta charset="utf-8">
-  <title>Diverse Dermatology Images</title>
-  <meta name="description" content="Diverse Dermatology Images: a biopsy-proven skin disease dataset with diverse skin tone representation."><!--#include file="lagunita.html" -->
+  <title>Evaluating Anti-LGBTQIA+ Medical Bias in Large Language Models (LLMs)</title>
+  <meta name="description" content="Investigating the potential of LLMs to propagate anti-LGBTQIA+ medical bias and misinformation."><!--#include file="lagunita.html" -->
   <!--Lagunita Theme (TODO: Server side include)-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="lagunita/css/bootstrap.min.css" type="text/css">
@@ -37,10 +37,10 @@
         <div class="col-md-8">
           <div id="signature">
             <div id="site-name">
-              <a href="https://echonet.github.io/dynamic/index.html"><span id="site-name-1">Diverse Dermatology Images</span></a>
+              <a href="https://echonet.github.io/dynamic/index.html"><span id="site-name-1">Evaluating Anti-LGBTQIA+ Medical Bias in Large Language Models (LLMs)</span></a>
             </div>
             <div id="site-slogan">
-              <a href="https://echonet.github.io/dynamic/index.html"><span id="site_slogan">A biopsy-proven skin disease dataset with diverse skin tone representation.</span></a>
+              <a href="https://echonet.github.io/dynamic/index.html"><span id="site_slogan">Investigating the potential of LLMs to propagate anti-LGBTQIA+ medical bias and misinformation.</span></a>
             </div>
           </div>
         </div>
@@ -63,7 +63,7 @@
                   <a href="index.html#intro">Introduction</a>
                 </li>
                 <li id="nav-3">
-                  <a href="index.html#motivation">Motivation</a>
+                  <a href="index.html#methods">Methods</a>
                 </li>
                 <li id="nav-4">
                   <a href="index.html#dataset">Dataset</a>
@@ -87,14 +87,15 @@
   <!--End Header-->
   <div id="intro" class="container" role="introduction" tabindex="0">
     <h2>Introduction</h2>
-    <p>Dermatologists diagnose a wide range of skin disease, ranging from skin cancers to inflammatory conditions like atopic dermatitis and psoriasis. However, globally, an estimated 3 billion people have inadequate access to medical care for skin disease. Even in the United States, there is a shortage and unequal access to dermatologists leading to long wait times. One proposed solution is the use of artificial intelligence (AI) tools, which could help with triaging skin diseases and identifying individuals with potential skin diseases. There has been rapid development of algorithms which claim to detect cutaneous malignancies over the last few years.  However, we recently published a review of AI datasets for dermatology found that most datasets are not publicly available, lack important information about dataset diversity, and have noisy diagnostic labels. Currently, publicly available datasets lack biopsy-proven skin lesions in dark skin tones. </p><br>
-    <p><img class="center" loading="lazy" width="500" src="media/JAMA_derm_diverse.png">
+    <p>From drafting responses to patient messages in electronic health record systems to clinical decision support, Large Language Models (LLMs) present many opportunities for use in medicine. Patient-facing use-cases are also relevant, such as a patient using an LLM to obtain information on potential treatments for a medical issue. In these applications, it is important to consider potential harms to minority groups through the propagation of medical misinformation or misconceptions. Leading LLMs propagate harmful and debunked notions of race-based medicine and binary gender bias. This has been explored in the context of prompting LLMs directly with questions relating to race-based medical misconceptions6 and through incorporating race-identifying information into clinical notes and investigating how the presence of this information can lead to bias and inaccuracy. </p><br>
+    <p>Though the presence of anti-LGBTQIA+ bias and inaccuracy has long been suspected in LLMs tasked with medical use cases, our study is the first to investigate this across multiple real-world clinical scenarios in cooperation with clinical experts. We include both explicit questions, which mimic the use of LLMs as a search tool, and extended clinical scenarios, which simulate medical scenarios through realistic patient notes. We also probe for both incidental bias associated only with the mention of the LGBTQIA+ identity and expected historical bias surrounding stereotyped medical conditions, and thoroughly classify and qualitatively annotate inaccuracies at a level of detail not captured by previous numerical-only evaluations of bias. We test both publicly accessible LLMs, which have been previously shown to be used by community clinicians, and a secure model intended for clinical use.</p>
     <br>
-    <p><h2 id="motivation">Motivation</h2>
+    <p><h2 id="methods">Methods</h2>
     <p>In order to train and test AI algorithms in dermatology, we need diverse, validated benchmarks. We curated the Diverse Dermatology Images (DDI) dataset to meet this need—the first publicly available, deeply curated, and pathologically confirmed image dataset with diverse skin tones.</p><br>
     <br>
     <p><b>Clinical application:</b> Given the long wait time to see a dermatologist, AI algorithms could help triage benign versus malignant lesions.  However, it is important to have expertly labeled data that represents diverse skin tones in order to make sure that algorithms perform fairly across all groups. </p>
     <br>
+    <p><img class="center" loading="lazy" width="500" src="media/JAMA_derm_diverse.png">
     <p><h2 id="dataset">Dataset</h2>
     <p> <b>Labeling:</b> The DDI was retrospectively selected from reviewing pathology reports in Stanford Clinics from 2010-2020 with further details in our paper. There are 656 images representing 570 unique patients.  Each image label was expertly curated: skin tone was labeled based on in-person evaluation at the clinic visit cross-referenced against demographic photos and review of the clinical images by two board certified dermatologists. Each diagnosis was based on pathology reports from biopsy: these reports and the corresponding image was reviewed by a board certified dermatologist and dermatopathologist.  </p><br>
     <p><b>Skin tone comparison:</b> The dataset comprised a retrospective convenience sample across all images of Fitzpatrick I-VI but was also designed to allow direct comparison between Fitzpatrick I-II and Fitzpatrick V-VI by matching diagnostic category, age within 10 years, gender, and date of photograph within 3 years. The images are not meant to be text book examples but rather represent the kind of clinical photos that AI algorithms may encounter in practice.  This design allows us to evaluate previously developed state-of-the-art diagnostic algorithms across. During the de-identification process prior to data release, some of the images were cropped further to protect patient privacy.  However, the main lesions were preserved during this process.</p><br>
