@@ -66,10 +66,10 @@
                   <a href="index.html#methods">Methods</a>
                 </li>
                 <li id="nav-4">
-                  <a href="index.html#dataset">Dataset</a>
+                  <a href="index.html#Results">Results</a>
                 </li>
                 <li id="nav-5">
-                  <a href="index.html#code">Code</a>
+                  <a href="index.html#dataset">Dataset</a>
                 </li>
                 <li id="nav-6">
                   <a href="index.html#access">Accessing Dataset</a>
@@ -97,15 +97,18 @@
     <p><b>Figure 1: Prompt construction framework.</b> The four subgroups in this diagram represent the four categories of prompts that were generated along these two axes: Subgroup 1 (historical bias observed and LGBTQIA+ identity should not affect optimal clinical care), Subgroup 2 (historical bias observed and LGBTQIA+ identity could be important for optimal clinical care but not necessarily), Subgroup 3 (historical bias observed and LGBTQIA+ identity should affect optimal clinical care), and Subgroup 4 (no historical bias noted beyond what would be expected by mentioning the LGBTQIA+ identity and LGBTQIA+ identity should not affect optimal clinical care).</p>
     <br>
     <p><img class="center" loading="lazy" width="500" src="media/lgbtqia_bias_fig1.png">
+    <h2 id="results">Results</h2>
+    <p>Our code is available <a href="https://drive.google.com/drive/folders/1oQ53WH_Tp6rcLZjRp_-UBOQcMl-b1kkP?usp=sharing">here</a>.</p>
+    <br>
+    <p><b>Figure 2: Quantitative Results. Panel A:</b> the percentage of responses per model that were categorized as appropriate, inappropriate, or refused to answer. <b>Panel B:</b> the percentage of responses categorized as inappropriate that were sub-categorized as being inappropriate due to concerns of safety, privacy, hallucination/accuracy, and/or bias. Multiple concerns could exist for each response, thus the sum percentages across the four sub-categories could exceed 100% for each model. <b>Panel C:</b> the average clinical utility score for appropriate and inappropriate responses per model (including across all models).</p>
+    <br>
+    <p><img class="center" loading="lazy" width="500" src="media/lgbtqia_bias_fig2.png">
+    <br>
     <p><h2 id="dataset">Dataset</h2>
     <p> <b>Labeling:</b> The DDI was retrospectively selected from reviewing pathology reports in Stanford Clinics from 2010-2020 with further details in our paper. There are 656 images representing 570 unique patients.  Each image label was expertly curated: skin tone was labeled based on in-person evaluation at the clinic visit cross-referenced against demographic photos and review of the clinical images by two board certified dermatologists. Each diagnosis was based on pathology reports from biopsy: these reports and the corresponding image was reviewed by a board certified dermatologist and dermatopathologist.  </p><br>
     <p><b>Skin tone comparison:</b> The dataset comprised a retrospective convenience sample across all images of Fitzpatrick I-VI but was also designed to allow direct comparison between Fitzpatrick I-II and Fitzpatrick V-VI by matching diagnostic category, age within 10 years, gender, and date of photograph within 3 years. The images are not meant to be text book examples but rather represent the kind of clinical photos that AI algorithms may encounter in practice.  This design allows us to evaluate previously developed state-of-the-art diagnostic algorithms across. During the de-identification process prior to data release, some of the images were cropped further to protect patient privacy.  However, the main lesions were preserved during this process.</p><br>
-    <p><img class="center" loading="lazy" width="500" src="media/Figure_1_modified.png">
   
     <p>Further description of the dataset is available in our <a href="https://arxiv.org/abs/2111.08006">NeurIPS Machine Learning 4 Health workshop extended abstract</a>.</p>
-    <br>
-    <h2 id="code">Code</h2>
-    <p>Our code is available <a href="https://drive.google.com/drive/folders/1oQ53WH_Tp6rcLZjRp_-UBOQcMl-b1kkP?usp=sharing">here</a>.</p>
     <br>
     <h2 id="access">Accessing Dataset</h2>
     <br>
